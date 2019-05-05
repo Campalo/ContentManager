@@ -2,6 +2,21 @@ import React, { Component } from "react";
 
 const Context = React.createContext();
 
+// the reducer is going to evaluate the action type which is DELETE CONTACT
+// and then the reducer will filter the id and compare it to the id from the payload
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "DELETE_CONTACT":
+      return {
+        ...state,
+        contacts: state.contacts.filter(contact => contact.id !== action.payload)
+      };
+
+    default:
+      return state;
+  }
+};
+
 export class Provider extends Component {
   state = {
     contacts: [
@@ -23,7 +38,11 @@ export class Provider extends Component {
         email: "henryj@gmail.com",
         phone: "333-555-5555"
       }
-    ]
+    ],
+    // dispatch is part of our state so that allow us to call the reducer
+    dispatch: action => {
+      this.setState(state => reducer(state, action));
+    }
   };
 
   render() {
