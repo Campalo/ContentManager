@@ -1,5 +1,5 @@
 import React from "react";
-// to support Typechecking thnaks to PropTypes
+// to support Typechecking via PropTypes
 import PropTypes from "prop-types";
 
 const Header = props => {
