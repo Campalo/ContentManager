@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // to support Typechecking via PropTypes
 import PropTypes from "prop-types";
-import { Consumer } from "../contextApi";
+import { Consumer } from "../../contextApi";
 
 class Contact extends Component {
   state = {

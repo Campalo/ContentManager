@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Contact from "./Contact";
-import { Consumer } from "../contextApi";
+import { Consumer } from "../../contextApi";
 
 class Contacts extends Component {
   render() {
